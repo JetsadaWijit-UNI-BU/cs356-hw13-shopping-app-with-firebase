@@ -65,4 +65,14 @@ class ProductManager {
       debugPrint('Failed to delete product: $e');
     }
   }
+
+  Future<List<ProductModel>> searchProducts(String keyword) async {
+    if (keyword.isEmpty) {
+      return [];
+    }
+    final items = await getProducts();
+    return items
+        .where((item) => item.name.toLowerCase().contains(keyword.toLowerCase()))
+        .toList();
+  }
 }

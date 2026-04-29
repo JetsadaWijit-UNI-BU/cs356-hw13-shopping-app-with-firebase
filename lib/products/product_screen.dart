@@ -1,6 +1,7 @@
 import 'package:act13_1640705339/products/product_form_screen.dart';
 import 'package:act13_1640705339/products/product_manager.dart';
 import 'package:act13_1640705339/products/product_model.dart';
+import 'package:act13_1640705339/products/product_search_screen.dart';
 import 'package:act13_1640705339/products/product_util.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +24,15 @@ class _ProductScreenState extends State<ProductScreen> {
         appBar: AppBar(
           title: const Text('Products'),
           actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProductSearchScreen()),
+                );
+              },
+              icon: const Icon(Icons.search),
+            ),
             IconButton(
               onPressed: () {
                 setState(() {
