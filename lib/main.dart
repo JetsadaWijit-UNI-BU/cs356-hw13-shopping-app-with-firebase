@@ -13,7 +13,7 @@ void main() async {
       );
     }
   } catch (e) {
-    debugPrint("Firebase initialization info: $e");
+    debugPrint("Firebase already initialized or initialization skipped: $e");
   }
 
   runApp(const MainApp());
